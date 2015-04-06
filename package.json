@@ -20,6 +20,7 @@
     "middleware"
   ],
   "dependencies": {
+    "body-parser": "~1.12.2",
     "csv": "~0.4.1"
   },
   "devDependencies": {
