@@ -4,9 +4,8 @@ var csv = require('csv');
 
 var DEFAULT_TYPE = 'text/csv';
 
-module.exports = function (options, parseOptions) {
-  var textOptions = Object.create({}, options);
-  textOptions.type = options.type || DEFAULT_TYPE;
+module.exports = function (textOptions, parseOptions) {
+  textOptions.type = textOptions.type || DEFAULT_TYPE;
   var textMiddleware = bodyParser.text(textOptions);
 
   return function (req, res, next) {
