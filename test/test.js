@@ -55,7 +55,6 @@ describe('res.csv', function () {
         return this;
       };
       res.send = function (data) {
-        console.log(data);
         res.end(data);
       };
       res.csv([

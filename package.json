@@ -1,6 +1,6 @@
 {
   "name": "express-csv-middleware",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Express middleware that parse text/csv content into array or object. ",
   "homepage": "https://github.com/gregwym/express-csv-middleware",
   "author": {
