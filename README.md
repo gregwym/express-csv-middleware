@@ -1,6 +1,6 @@
 #  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
-> Express middleware that parse text/csv content into array or object. 
+> Express middleware that parse text/csv content into array or object.
 
 
 ## Install
@@ -13,9 +13,24 @@ $ npm install --save express-csv-middleware
 ## Usage
 
 ```js
-var expressCsvMiddleware = require('express-csv-middleware');
+var expressCsv = require('express-csv-middleware');
 
-expressCsvMiddleware('Rainbow');
+var bodyParserOptions = {
+  // https://github.com/expressjs/body-parser#bodyparsertextoptions
+};
+var csvOptions = {
+  // http://csv.adaltas.com/parse/
+  // http://csv.adaltas.com/stringify/
+};
+
+app.use(expressCsv(bodyParserOptions, csvOptions));
+
+// POST with Content-Type: text/csv
+app.post(function(req, res) {
+  console.log(req.body);    // [['header', 'row'], ['body', 'rows'], ...]
+  app.csv(req.body);        // Respond with Content-Type: text/csv
+})
+
 ```
 
 
